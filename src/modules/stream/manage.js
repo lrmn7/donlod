@@ -27,11 +27,11 @@ export function createStream(obj) {
             hmac: ghmac,
             ip: obj.ip,
             exp: exp,
-            isAudioOnly: !!obj.isAudioOnly,
+            isAudioOnly: Boolean(obj.isAudioOnly),
             audioFormat: obj.audioFormat,
             time: obj.time ? obj.time : false,
-            copy: !!obj.copy,
-            mute: !!obj.mute,
+            copy: Boolean(obj.copy),
+            mute: Boolean(obj.mute),
             metadata: obj.fileMetadata ? obj.fileMetadata : false
         });
     } else {

@@ -20,7 +20,7 @@ import vine from "./services/vine.js";
 
 export default async function (host, patternMatch, url, lang, obj) {
     try {
-        let r, isAudioOnly = !!obj.isAudioOnly;
+        let r, isAudioOnly = Boolean(obj.isAudioOnly);
 
         if (!testers[host]) return apiJSON(0, { t: errorUnsupported(lang) });
         if (!(testers[host](patternMatch))) return apiJSON(0, { t: brokenLink(lang, host) });
