@@ -27,10 +27,10 @@ export default async function(o) {
         headers: { "user-agent": genericUserAgent }
     }).then((r) => { return r.text() }).catch(() => { return false });
     if (!html) return { error: 'ErrorCouldntFetch' };
-    if (!html.includes(`{"lang":`)) return { error: 'ErrorEmptyDownload' };
+    if (!html.includes('{"lang":')) return { error: 'ErrorEmptyDownload' };
 
     let quality = o.quality === "max" ? 7 : representationMatch[o.quality],
-        js = JSON.parse('{"lang":' + html.split(`{"lang":`)[1].split(']);')[0]);
+        js = JSON.parse('{"lang":' + html.split('{"lang":')[1].split(']);')[0]);
 
     if (Number(js.mvData.is_active_live) !== 0) return { error: 'ErrorLiveVideo' };
     if (js.mvData.duration > maxVideoDuration / 1000) return { error: ['ErrorLengthLimit', maxVideoDuration / 60000] };
@@ -48,7 +48,7 @@ export default async function(o) {
 
     } else if (js.player.params[0]["url240"]) { // fallback for when video is too old
         url = js.player.params[0]["url240"];
-        filename += `320x240.mp4`
+        filename += "320x240.mp4"
     }
 
     if (url && filename) return {

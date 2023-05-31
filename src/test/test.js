@@ -61,11 +61,11 @@ console.log(`❌ ${failed.length} tests failed.`);
 console.log(`❔ ${noTest.length} services weren't tested.`);
 
 if (failed.length > 0) {
-    console.log(`\nFailed tests:`);
+    console.log("\nFailed tests:");
     console.log(failed)
 }
 
 if (noTest.length > 0) {
-    console.log(`\nMissing tests:`);
+    console.log("\nMissing tests:");
     console.log(noTest)
 }
