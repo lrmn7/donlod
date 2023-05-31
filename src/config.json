@@ -1,0 +1,68 @@
+{
+    "streamLifespan": 120000,
+    "maxVideoDuration": 10800000,
+    "genericUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "authorInfo": {
+        "name": "LRMN",
+        "link": "https://lrmn.is-a.dev",
+        "contact": "https://lrmn.is-a.dev/contact",
+        "support": {
+            "twitter": {
+                "url": "https://twitter.com/romanromannya",
+                "handle": "@LRMN"
+            },
+            "mastodon": {
+                "url": "https://instagram/romanroman.nya",
+                "handle": "@LRMN"
+            }
+        }
+    },
+    "donations": {
+        "crypto": {
+            "bitcoin": "1AC16gvSuondEhE9onGLrgeZDpLiro46mg",
+            "ethereum": "0x451215bacb440baebad62d1f1305b50566b351f6",
+            "litecoin": "ltc1qcf0mvf6pdlkmdtelmv0kzdcp2uhqc4hs73ndna"
+        },
+        "links": {
+            "trakteer.id": "https://trakteer.id/lrmn"
+        }
+    },
+    "links": {
+        "saveToGalleryShortcut": "https://www.icloud.com/shortcuts/6d4fe6e5bade4150b8759ce20720c7a3"
+    },
+    "celebrations": {
+        "01-01": "🎄",
+        "02-17": "😺",
+        "02-22": "😺",
+        "03-01": "😺",
+        "05-26": "🎂",
+        "08-08": "😺",
+        "08-26": "🐶",
+        "10-29": "😺",
+        "10-30": "🎃",
+        "10-31": "🎃",
+        "11-01": "🕯️",
+        "11-02": "🕯️",
+        "12-20": "🎄",
+        "12-21": "🎄",
+        "12-22": "🎄",
+        "12-23": "🎄",
+        "12-24": "🎄",
+        "12-25": "🎄",
+        "12-26": "🎄",
+        "12-27": "🎄",
+        "12-28": "🎄",
+        "12-29": "🎄",
+        "12-30": "🎄",
+        "12-31": "🎄",
+        "03-08": "💪"
+    },
+    "supportedAudio": ["mp3", "ogg", "wav", "opus"],
+    "ffmpegArgs": {
+        "webm": ["-c:v", "copy", "-c:a", "copy"],
+        "mp4": ["-c:v", "copy", "-c:a", "copy", "-movflags", "faststart+frag_keyframe+empty_moov"],
+        "copy": ["-c:a", "copy"],
+        "audio": ["-ar", "48000", "-ac", "2", "-b:a", "320k"],
+        "m4a": ["-movflags", "frag_keyframe+empty_moov"]
+    }
+}

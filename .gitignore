@@ -1,0 +1,15 @@
+# npm
+node_modules
+package-lock.json
+
+# secrets
+.env
+
+# esbuild
+min
+
+# page build
+build
+
+# stuff i already made but delayed
+future
