@@ -249,7 +249,7 @@ function internetError() {
     popup("error", 1, loc.noInternet);
 }
 function checkbox(action) {
-    sSet(action, !!eid(action).checked);
+    sSet(action, Boolean(eid(action).checked));
     switch(action) {
         case "alwaysVisibleButton": button(); break;
     }
