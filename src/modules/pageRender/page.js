@@ -13,8 +13,8 @@ let enabledServices = Object.keys(s).filter((p) => {
     return `<br>&bull; ${s[p].alias ? s[p].alias : p}`
 }).join('').substring(4)
 
-let donate = ``
-let donateLinks = ``
+let donate = ""
+let donateLinks = ""
 let audioFormats = supportedAudio.map((p) => {
     return { "action": p }
 })
@@ -44,7 +44,7 @@ export default function(obj) {
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=${isIOS ? `1` : `5`}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=${isIOS ? "1" : "5"}" />
 
         <title>${appName}</title>
 
@@ -343,8 +343,8 @@ export default function(obj) {
             name: "picker",
             closeAria: t('AccessibilityClosePopup'),
             header: {
-                title: `<div id="picker-title"></div>`,
-                explanation: `<div id="picker-subtitle"></div>`,
+                title: '<div id="picker-title"></div>',
+                explanation: '<div id="picker-subtitle"></div>',
             },
             buttons: [`<a id="picker-download" class="switch" target="_blank" href="/">${t('ImagePickerDownloadAudio')}</a>`],
             content: '<div id="picker-holder"></div>'
@@ -360,7 +360,7 @@ export default function(obj) {
                 title: t('TitlePopupError'),
                 emoji: emoji("☹️", 64, 1),
             },
-            body: `<div id="desc-error" class="desc-padding subtext"></div>`
+            body: '<div id="desc-error" class="desc-padding subtext"></div>'
         })}
         <div id="popup-backdrop" style="visibility: hidden;" onclick="hideAllPopups()"></div>
         <div id="donlod-main-box" class="center" style="visibility: hidden;">

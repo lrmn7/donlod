@@ -2,7 +2,7 @@ import { celebrations } from "../config.js";
 import emoji from "../emoji.js";
 
 export function switcher(obj) {
-    let items = ``;
+    let items = "";
     if (obj.name === "download") {
         items = obj.items;
     } else {
@@ -14,14 +14,14 @@ export function switcher(obj) {
 
     if (obj.noParent) return `<div id="${obj.name}" class="switches">${items}</div>`;
     return `<div id="${obj.name}-switcher" class="switch-container">
-            ${obj.subtitle ? `<div class="subtitle">${obj.subtitle}</div>` : ``}
+            ${obj.subtitle ? `<div class="subtitle">${obj.subtitle}</div>` : ""}
             <div class="switches">${items}</div>
-            ${obj.explanation ? `<div class="explanation">${obj.explanation}</div>` : ``}
+            ${obj.explanation ? `<div class="explanation">${obj.explanation}</div>` : ""}
         </div>`
 }
 
 export function checkbox(action, text, paddingType, aria) {
-    let paddingClass = ` `
+    let paddingClass = " "
     switch (paddingType) {
         case 1:
             paddingClass += "bottom-margin"
@@ -41,10 +41,10 @@ export function checkbox(action, text, paddingType, aria) {
     </label>`
 }
 export function sep(paddingType) {
-    let paddingClass = ``
+    let paddingClass = ""
     switch(paddingType) {
         case 0: 
-            paddingClass += ` top-margin`;
+            paddingClass += " top-margin";
             break;
     }
     return `<div class="separator${paddingClass}"></div>`
@@ -53,7 +53,7 @@ export function popup(obj) {
     let classes = obj.classes ? obj.classes : []
     let body = obj.body;
     if (Array.isArray(obj.body)) {
-        body = ``
+        body = ""
         for (let i = 0; i < obj.body.length; i++) {
             if (obj.body[i]["text"].length > 0) {
                 classes = obj.body[i]["classes"] ? obj.body[i]["classes"] : []
@@ -68,7 +68,7 @@ export function popup(obj) {
     ${obj.standalone ? `<div id="popup-${obj.name}" class="popup center box${classes.length > 0 ? ' ' + classes.join(' ') : ''}" style="visibility: hidden;">` : ''}
         <div id="popup-header" class="popup-header">
             ${obj.standalone && !obj.buttonOnly ? `<button id="close-button" class="switch up" onclick="popup('${obj.name}', 0)" ${obj.header.closeAria ? `aria-label="${obj.header.closeAria}"` : ''}>x</button>` : ''}
-            ${obj.buttonOnly ? obj.header.emoji : ``}
+            ${obj.buttonOnly ? obj.header.emoji : ""}
             ${obj.header.aboveTitle ? `<a id="popup-above-title" target="_blank" href="${obj.header.aboveTitle.url}">${obj.header.aboveTitle.text}</a>` : ''}
             ${obj.header.title ? `<div id="popup-title">${obj.header.title}</div>` : ''}
             ${obj.header.subtitle ? `<div id="popup-subtitle">${obj.header.subtitle}</div>` : ''}
@@ -79,12 +79,12 @@ export function popup(obj) {
         ${obj.footer ? `<div id="popup-footer" class="popup-footer">
             <a id="popup-bottom" class="popup-footer-content" target="_blank" href="${obj.footer.url}">${obj.footer.text}</a>
         </div>` : ''}
-    ${obj.standalone ? `</div>` : ''}`
+    ${obj.standalone ? "</div>" : ''}`
 }
 
 export function multiPagePopup(obj) {
-    let tabs = ``
-    let tabContent = ``
+    let tabs = ""
+    let tabContent = ""
     for (let i = 0; i < obj.tabs.length; i++) {
         tabs += `<button id="tab-button-${obj.name}-${obj.tabs[i]["name"]}" class="switch tab tab-${obj.name}" onclick="changeTab(event, 'tab-${obj.name}-${obj.tabs[i]["name"]}', '${obj.name}')">${obj.tabs[i]["title"]}</button>`
         tabContent += `<div id="tab-${obj.name}-${obj.tabs[i]["name"]}" class="popup-tab-content tab-content-${obj.name}">${obj.tabs[i]["content"]}</div>`
@@ -100,7 +100,7 @@ export function multiPagePopup(obj) {
     </div>`
 }
 export function collapsibleList(arr) {
-    let items = ``
+    let items = ""
     for (let i = 0; i < arr.length; i++) {
         items += `<div id="${arr[i]["name"]}-collapse" class="collapse-list">
             <div class="collapse-header" onclick="expandCollapsible(event)">
@@ -113,7 +113,7 @@ export function collapsibleList(arr) {
     return items;
 }
 export function popupWithBottomButtons(obj) {
-    let tabs = ``
+    let tabs = ""
     for (let i = 0; i < obj.buttons.length; i++) {
         tabs += obj.buttons[i]
     }
@@ -142,7 +142,7 @@ export function settingsCategory(obj) {
 }
 
 export function footerButtons(obj) {
-    let items = ``
+    let items = ""
     for (let i = 0; i < obj.length; i++) {
         switch (obj[i]["type"]) {
             case "toggle": 

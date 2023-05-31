@@ -5,7 +5,7 @@ let cache = {}
 export function changelogHistory() { // blockId 0
     if (cache['0']) return cache['0'];
     let history = changelogManager("history");
-    let render = ``;
+    let render = "";
     
     let historyLen = history.length;
     for (let i in history) {

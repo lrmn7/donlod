@@ -32,7 +32,7 @@ console.log(
 )
 
 rl.question(q, r1 => {
-    ob['selfURL'] = `http://localhost:9000/`
+    ob['selfURL'] = "http://localhost:9000/"
     ob['port'] = 9000
     if (r1) ob['selfURL'] = `https://${r1}/`
 

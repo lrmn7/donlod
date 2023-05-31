@@ -97,7 +97,7 @@ export default async function(obj) {
         if (!streamStatus) return { error: 'ErrorCouldntFetch' };
 
         let participants = AudioSpaceById.data.audioSpace.participants.speakers,
-            listOfParticipants = `Twitter Space speakers: `;
+            listOfParticipants = "Twitter Space speakers: ";
         for (let i in participants) { listOfParticipants += `@${participants[i]["twitter_screen_name"]}, ` }
         listOfParticipants = listOfParticipants.slice(0, -2);
 
